@@ -17,6 +17,12 @@
           <span class="price"><%= number_to_currency(product.price) %></span>
           <%= button_to 'Add to Cart', line_items_path(product_id: product),
             remote: true %>
+
+          <%# This one adds %>
+          <%= button_to 'Subtract from Cart', line_items_path(product_id: product), method: :decrement, remote: true %>
+          <%#<%= button_to 'Remove Item', decrement_line_item_path(line_item), method: :put, remote: true %>
+          <%#<%= button_to 'Subtract', decrement_line_item_path(line_item_id: line_item), remote: true %>
+ 
         </div>
       </div>
     <% end %>
